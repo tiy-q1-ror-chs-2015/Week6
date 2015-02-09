@@ -1,0 +1,18 @@
+.container
+  .row
+    .col-md-12
+      %h1 Items
+      %ul#items_list
+        = render 'items_list', items: @items
+  .row
+    .col-md-12
+      #form_container
+        = render 'new_item'
+  .row
+    .col-md-12
+      #search_container
+        %form#search_form
+          .form-inline
+            %label{:for => "search_item_name"} Search for:
+            = text_field_tag :search_item_name, '', class: 'form-control'
+            %a#search_item_button.btn.btn-primary Search

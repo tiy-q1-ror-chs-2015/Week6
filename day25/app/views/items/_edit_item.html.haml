@@ -1,0 +1,7 @@
+%form#edit_item_form
+  .form-inline
+    %label{:for => "item_name"} Name
+    = text_field_tag :item_name, item.name, name: 'item[name]', class: 'form-control'
+    %a#update_item.btn.btn-primary{"data-item_id" => item.id}
+      Submit
+    %a#cancel_edit.btn.btn-default Cancel

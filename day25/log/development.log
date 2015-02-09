@@ -1,0 +1,3368 @@
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateItems (20150209021732)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "items" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150209021732"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2015-02-09 09:42:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ItemsController#index as HTML
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_items_list.html.haml (2.1ms)
+  Rendered items/_new_item.html.haml (1.4ms)
+  Rendered items/index.html.haml within layouts/application (17.5ms)
+Completed 200 OK in 4935ms (Views: 4913.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/items-242bbff4c120005b76abbbc3c174fa83.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started GET "/assets/application-dbfc6ff43e933bb44ffae1b0c36849e4.js?body=1" for ::1 at 2015-02-09 09:42:11 -0500
+
+
+Started POST "/items" for ::1 at 2015-02-09 09:42:27 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>"Ice Cream"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Ice Cream"], ["created_at", "2015-02-09 14:42:27.444034"], ["updated_at", "2015-02-09 14:42:27.444034"]]
+  [1m[36m (1.2ms)[0m  [1mcommit transaction[0m
+  Rendered items/_item.html.haml (2.1ms)
+  Rendered items/create.js.haml (32.2ms)
+Completed 200 OK in 90ms (Views: 73.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 09:42:27 -0500
+
+
+Started POST "/items" for ::1 at 2015-02-09 09:42:30 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>"Creamsicle"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Creamsicle"], ["created_at", "2015-02-09 14:42:30.995965"], ["updated_at", "2015-02-09 14:42:30.995965"]]
+  [1m[35m (8.0ms)[0m  commit transaction
+  Rendered items/_item.html.haml (1.2ms)
+  Rendered items/create.js.haml (32.6ms)
+Completed 200 OK in 85ms (Views: 74.1ms | ActiveRecord: 8.4ms)
+
+
+Started POST "/items" for ::1 at 2015-02-09 09:42:44 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>"Ice Cream Sandwich"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Ice Cream Sandwich"], ["created_at", "2015-02-09 14:42:44.256942"], ["updated_at", "2015-02-09 14:42:44.256942"]]
+  [1m[36m (8.4ms)[0m  [1mcommit transaction[0m
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/create.js.haml (30.7ms)
+Completed 200 OK in 91ms (Views: 76.8ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/?item%5Bname%5D=Cookie" for ::1 at 2015-02-09 09:42:54 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"item"=>{"name"=>"Cookie"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (12.9ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_items_list.html.haml (23.9ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (30.4ms)
+Completed 200 OK in 151ms (Views: 150.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 09:42:54 -0500
+
+
+Started GET "/?item%5Bname%5D=Cookie" for ::1 at 2015-02-09 09:42:56 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"item"=>{"name"=>"Cookie"}}
+  [1m[36mItem Load (0.5ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.8ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_items_list.html.haml (11.2ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (17.3ms)
+Completed 200 OK in 135ms (Views: 134.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/items-242bbff4c120005b76abbbc3c174fa83.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/application-dbfc6ff43e933bb44ffae1b0c36849e4.js?body=1" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 09:42:56 -0500
+
+
+Started POST "/items" for ::1 at 2015-02-09 09:42:59 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>"Cookie"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cookie"], ["created_at", "2015-02-09 14:42:59.963590"], ["updated_at", "2015-02-09 14:42:59.963590"]]
+  [1m[35m (8.5ms)[0m  commit transaction
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/create.js.haml (33.3ms)
+Completed 200 OK in 87ms (Views: 74.0ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/items" for ::1 at 2015-02-09 09:43:02 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>"Pie"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Pie"], ["created_at", "2015-02-09 14:43:02.368968"], ["updated_at", "2015-02-09 14:43:02.368968"]]
+  [1m[36m (9.3ms)[0m  [1mcommit transaction[0m
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/create.js.haml (26.6ms)
+Completed 200 OK in 85ms (Views: 69.8ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/items/5/edit" for ::1 at 2015-02-09 09:43:12 -0500
+Processing by ItemsController#edit as */*
+  Parameters: {"id"=>"5"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered items/_edit_item.html.haml (2.9ms)
+  Rendered items/edit.js.haml (33.4ms)
+Completed 200 OK in 97ms (Views: 85.1ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/items/5" for ::1 at 2015-02-09 09:43:17 -0500
+Processing by ItemsController#update as */*
+  Parameters: {"item"=>{"name"=>"Apple Pie"}, "id"=>"5"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "items" SET "name" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["name", "Apple Pie"], ["updated_at", "2015-02-09 14:43:17.259562"], ["id", 5]]
+  [1m[35m (8.5ms)[0m  commit transaction
+  Rendered items/_new_item.html.haml (2.2ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/update.js.haml (61.7ms)
+Completed 200 OK in 123ms (Views: 108.5ms | ActiveRecord: 9.3ms)
+
+
+Started DELETE "/items/5" for ::1 at 2015-02-09 09:43:20 -0500
+Processing by ItemsController#destroy as JS
+  Parameters: {"id"=>"5"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 5]]
+  [1m[35m (9.2ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 15ms (Views: 2.7ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/items/search?search_item_name=Ice" for ::1 at 2015-02-09 09:43:28 -0500
+Processing by ItemsController#search as */*
+  Parameters: {"search_item_name"=>"Ice"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE (name LIKE '%Ice%')[0m
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_items_list.html.haml (65.5ms)
+  Rendered items/search.js.haml (102.2ms)
+Completed 200 OK in 139ms (Views: 137.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/search?search_item_name=" for ::1 at 2015-02-09 09:43:45 -0500
+Processing by ItemsController#search as */*
+  Parameters: {"search_item_name"=>""}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE (name LIKE '%%')
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_items_list.html.haml (112.6ms)
+  Rendered items/search.js.haml (146.6ms)
+Completed 200 OK in 184ms (Views: 182.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/items" for ::1 at 2015-02-09 09:46:38 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>"Pie"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Pie"], ["created_at", "2015-02-09 14:46:38.734185"], ["updated_at", "2015-02-09 14:46:38.734185"]]
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+  Rendered items/_item.html.haml (0.9ms)
+  Rendered items/create.js.haml (36.3ms)
+Completed 200 OK in 86ms (Views: 74.6ms | ActiveRecord: 8.3ms)
+
+
+Started POST "/items" for ::1 at 2015-02-09 09:52:08 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>"Apple Pie"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Apple Pie"], ["created_at", "2015-02-09 14:52:08.849637"], ["updated_at", "2015-02-09 14:52:08.849637"]]
+  [1m[35m (9.2ms)[0m  commit transaction
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/create.js.haml (28.0ms)
+Completed 200 OK in 85ms (Views: 71.7ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/?item%5Bname%5D=Cookie" for ::1 at 2015-02-09 09:56:35 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"item"=>{"name"=>"Cookie"}}
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.8ms)
+  Rendered items/_items_list.html.haml (22.4ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (30.0ms)
+Completed 200 OK in 240ms (Views: 238.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/items-4f8f36bb0bc539fae6096ff6a5dd7a23.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/application-58093a3555a23a1dd07ea3e294eccc48.js?body=1" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 09:56:36 -0500
+
+
+Started GET "/?item%5Bname%5D=Cookie" for ::1 at 2015-02-09 09:56:58 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"item"=>{"name"=>"Cookie"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (1.1ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_items_list.html.haml (20.4ms)
+  Rendered items/_new_item.html.haml (0.4ms)
+  Rendered items/index.html.haml within layouts/application (26.4ms)
+Completed 200 OK in 191ms (Views: 189.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/items-842eaee7bcd7b78d65a598eead0e89f9.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/application-af819ceb027e0c03ce809f238423c1da.js?body=1" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 09:56:59 -0500
+
+
+Started GET "/?item%5Bname%5D=Cookie" for ::1 at 2015-02-09 09:57:11 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"item"=>{"name"=>"Cookie"}}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_items_list.html.haml (18.0ms)
+  Rendered items/_new_item.html.haml (0.1ms)
+  Rendered items/index.html.haml within layouts/application (24.1ms)
+Completed 200 OK in 158ms (Views: 157.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/items-242bbff4c120005b76abbbc3c174fa83.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/application-dbfc6ff43e933bb44ffae1b0c36849e4.js?body=1" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 09:57:11 -0500
+
+
+Started GET "/items/7/edit" for ::1 at 2015-02-09 09:57:20 -0500
+Processing by ItemsController#edit as */*
+  Parameters: {"id"=>"7"}
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered items/_edit_item.html.haml (0.7ms)
+  Rendered items/edit.js.haml (24.0ms)
+Completed 200 OK in 57ms (Views: 55.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items/new_form" for ::1 at 2015-02-09 09:57:22 -0500
+Processing by ItemsController#new_form as */*
+  Rendered items/_new_item.html.haml (0.6ms)
+  Rendered items/new_form.js.haml (26.4ms)
+Completed 200 OK in 69ms (Views: 68.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/items" for ::1 at 2015-02-09 09:57:25 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>"Foo"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Foo"], ["created_at", "2015-02-09 14:57:25.218360"], ["updated_at", "2015-02-09 14:57:25.218360"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/create.js.haml (30.8ms)
+Completed 200 OK in 87ms (Views: 72.3ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/items/8/edit" for ::1 at 2015-02-09 09:57:33 -0500
+Processing by ItemsController#edit as */*
+  Parameters: {"id"=>"8"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered items/_edit_item.html.haml (0.3ms)
+  Rendered items/edit.js.haml (22.9ms)
+Completed 200 OK in 55ms (Views: 53.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/new_form" for ::1 at 2015-02-09 09:57:35 -0500
+Processing by ItemsController#new_form as */*
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/new_form.js.haml (23.7ms)
+Completed 200 OK in 61ms (Views: 60.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 09:58:49 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 09:58:49 -0500
+
+
+Started GET "/items/7/edit" for ::1 at 2015-02-09 10:02:52 -0500
+Processing by ItemsController#edit as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered items/_edit_item.html.haml (0.4ms)
+  Rendered items/edit.js.haml (38.0ms)
+Completed 200 OK in 70ms (Views: 68.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items/new_form" for ::1 at 2015-02-09 10:04:02 -0500
+Processing by ItemsController#new_form as */*
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/new_form.js.haml (24.1ms)
+Completed 200 OK in 59ms (Views: 58.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/8/edit" for ::1 at 2015-02-09 10:04:35 -0500
+Processing by ItemsController#edit as */*
+  Parameters: {"id"=>"8"}
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered items/_edit_item.html.haml (0.3ms)
+  Rendered items/edit.js.haml (24.4ms)
+Completed 200 OK in 55ms (Views: 54.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items/new_form" for ::1 at 2015-02-09 10:04:41 -0500
+Processing by ItemsController#new_form as */*
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/new_form.js.haml (32.0ms)
+Completed 200 OK in 70ms (Views: 69.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/8/edit" for ::1 at 2015-02-09 10:04:45 -0500
+Processing by ItemsController#edit as */*
+  Parameters: {"id"=>"8"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered items/_edit_item.html.haml (0.3ms)
+  Rendered items/edit.js.haml (24.1ms)
+Completed 200 OK in 62ms (Views: 60.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items/new_form" for ::1 at 2015-02-09 10:05:00 -0500
+Processing by ItemsController#new_form as */*
+  Rendered items/_new_item.html.haml (0.3ms)
+  Rendered items/new_form.js.haml (24.9ms)
+Completed 200 OK in 59ms (Views: 57.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/8/edit" for ::1 at 2015-02-09 10:05:02 -0500
+Processing by ItemsController#edit as */*
+  Parameters: {"id"=>"8"}
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered items/_edit_item.html.haml (0.4ms)
+  Rendered items/edit.js.haml (24.2ms)
+Completed 200 OK in 56ms (Views: 54.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items/new_form" for ::1 at 2015-02-09 10:05:02 -0500
+Processing by ItemsController#new_form as */*
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/new_form.js.haml (23.9ms)
+Completed 200 OK in 61ms (Views: 60.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?item%5Bname%5D=Cookie" for ::1 at 2015-02-09 10:05:12 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"item"=>{"name"=>"Cookie"}}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (1.0ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_items_list.html.haml (24.5ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (31.7ms)
+Completed 200 OK in 151ms (Views: 150.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/items-242bbff4c120005b76abbbc3c174fa83.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/application-dbfc6ff43e933bb44ffae1b0c36849e4.js?body=1" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:05:12 -0500
+
+
+Started GET "/items/8/edit" for ::1 at 2015-02-09 10:05:14 -0500
+Processing by ItemsController#edit as */*
+  Parameters: {"id"=>"8"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered items/_edit_item.html.haml (0.4ms)
+  Rendered items/edit.js.haml (23.4ms)
+Completed 200 OK in 54ms (Views: 53.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/items/8" for ::1 at 2015-02-09 10:05:15 -0500
+Processing by ItemsController#destroy as JS
+  Parameters: {"id"=>"8"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 8]]
+  [1m[35m (9.2ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/items/new_form" for ::1 at 2015-02-09 10:05:17 -0500
+Processing by ItemsController#new_form as */*
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/new_form.js.haml (27.7ms)
+Completed 200 OK in 64ms (Views: 63.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/7/edit" for ::1 at 2015-02-09 10:07:13 -0500
+Processing by ItemsController#edit as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered items/_edit_item.html.haml (0.4ms)
+  Rendered items/edit.js.haml (24.2ms)
+Completed 200 OK in 55ms (Views: 53.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items/new_form" for ::1 at 2015-02-09 10:07:13 -0500
+Processing by ItemsController#new_form as */*
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/new_form.js.haml (29.7ms)
+Completed 200 OK in 80ms (Views: 78.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/items/6/edit" for ::1 at 2015-02-09 10:09:44 -0500
+Processing by ItemsController#edit as */*
+  Parameters: {"id"=>"6"}
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered items/_edit_item.html.haml (0.4ms)
+  Rendered items/edit.js.haml (27.8ms)
+Completed 200 OK in 61ms (Views: 59.8ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/items/6" for ::1 at 2015-02-09 10:09:58 -0500
+Processing by ItemsController#update as */*
+  Parameters: {"item"=>{"name"=>"Cookie Pie"}, "id"=>"6"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "items" SET "name" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["name", "Cookie Pie"], ["updated_at", "2015-02-09 15:09:58.550370"], ["id", 6]]
+  [1m[35m (9.3ms)[0m  commit transaction
+  Rendered items/_new_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/update.js.haml (55.4ms)
+Completed 200 OK in 119ms (Views: 103.6ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/?item%5Bname%5D=Cookie" for ::1 at 2015-02-09 10:10:17 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"item"=>{"name"=>"Cookie"}}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_items_list.html.haml (24.3ms)
+  Rendered items/_new_item.html.haml (0.3ms)
+  Rendered items/index.html.haml within layouts/application (31.3ms)
+Completed 200 OK in 145ms (Views: 144.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/items-242bbff4c120005b76abbbc3c174fa83.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/application-dbfc6ff43e933bb44ffae1b0c36849e4.js?body=1" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:10:18 -0500
+
+
+Started DELETE "/items/7" for ::1 at 2015-02-09 10:11:55 -0500
+Processing by ItemsController#destroy as JS
+  Parameters: {"id"=>"7"}
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "items" WHERE "items"."id" = ?  [["id", 7]]
+  [1m[36m (9.3ms)[0m  [1mcommit transaction[0m
+  Rendered text template (0.0ms)
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/?item%5Bname%5D=Cookie" for ::1 at 2015-02-09 10:14:13 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"item"=>{"name"=>"Cookie"}}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.2ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.2ms)
+  Rendered items/_item.html.haml (1.0ms)
+  Rendered items/_items_list.html.haml (16.4ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (23.6ms)
+Completed 200 OK in 183ms (Views: 182.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/items-f6cd5cf4f0b326c44a687bb3a48e8a85.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/application-4a64d9d8a117ea9e80354187c1600a65.js?body=1" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:14:13 -0500
+
+
+Started DELETE "/items/6" for ::1 at 2015-02-09 10:14:15 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.7ms)[0m  [1mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 6]]
+  [1m[35m (9.4ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 10.3ms)
+
+
+Started DELETE "/items/4" for ::1 at 2015-02-09 10:18:46 -0500
+Processing by ItemsController#destroy as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "items" WHERE "items"."id" = ?[0m  [["id", 4]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  Rendered text template (0.0ms)
+Completed 200 OK in 12ms (Views: 3.6ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/items" for ::1 at 2015-02-09 10:18:52 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>"Cake"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Cake"], ["created_at", "2015-02-09 15:18:52.398795"], ["updated_at", "2015-02-09 15:18:52.398795"]]
+  [1m[36m (10.2ms)[0m  [1mcommit transaction[0m
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/create.js.haml (34.3ms)
+Completed 200 OK in 86ms (Views: 72.7ms | ActiveRecord: 10.6ms)
+
+
+Started POST "/items" for ::1 at 2015-02-09 10:18:56 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>"Pie"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pie"], ["created_at", "2015-02-09 15:18:56.598662"], ["updated_at", "2015-02-09 15:18:56.598662"]]
+  [1m[35m (9.0ms)[0m  commit transaction
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/create.js.haml (31.1ms)
+Completed 200 OK in 85ms (Views: 72.1ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/items" for ::1 at 2015-02-09 10:18:59 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>"Apple Pie"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Apple Pie"], ["created_at", "2015-02-09 15:18:59.695918"], ["updated_at", "2015-02-09 15:18:59.695918"]]
+  [1m[36m (9.3ms)[0m  [1mcommit transaction[0m
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/create.js.haml (37.5ms)
+Completed 200 OK in 92ms (Views: 78.7ms | ActiveRecord: 9.8ms)
+
+
+Started POST "/items" for ::1 at 2015-02-09 10:19:05 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>"Ice Cream Cake"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ice Cream Cake"], ["created_at", "2015-02-09 15:19:05.138657"], ["updated_at", "2015-02-09 15:19:05.138657"]]
+  [1m[35m (8.3ms)[0m  commit transaction
+  Rendered items/_item.html.haml (1.0ms)
+  Rendered items/create.js.haml (33.5ms)
+Completed 200 OK in 81ms (Views: 70.1ms | ActiveRecord: 8.7ms)
+
+
+Started POST "/items" for ::1 at 2015-02-09 10:19:09 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>"Carrot Cake"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Carrot Cake"], ["created_at", "2015-02-09 15:19:09.206338"], ["updated_at", "2015-02-09 15:19:09.206338"]]
+  [1m[36m (9.1ms)[0m  [1mcommit transaction[0m
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/create.js.haml (31.2ms)
+Completed 200 OK in 82ms (Views: 69.6ms | ActiveRecord: 9.4ms)
+  [1m[36mItem Load (3.1ms)[0m  [1mSELECT "items".* FROM "items" WHERE (name LIKE '%Ice%')[0m
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE (name LIKE '%Cream%')
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE (name LIKE '%Pie%')[0m
+
+
+Started GET "/items/search?search_item_name=Ice" for ::1 at 2015-02-09 10:26:40 -0500
+Processing by ItemsController#search as */*
+  Parameters: {"search_item_name"=>"Ice"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE (name LIKE '%Ice%')
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_items_list.html.haml (97.7ms)
+  Rendered items/search.js.haml (132.2ms)
+Completed 200 OK in 177ms (Views: 174.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items/search?search_item_name=Cream" for ::1 at 2015-02-09 10:26:44 -0500
+Processing by ItemsController#search as */*
+  Parameters: {"search_item_name"=>"Cream"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE (name LIKE '%Cream%')[0m
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.8ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_items_list.html.haml (103.3ms)
+  Rendered items/search.js.haml (131.3ms)
+Completed 200 OK in 167ms (Views: 165.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/search?search_item_name=Pie" for ::1 at 2015-02-09 10:26:48 -0500
+Processing by ItemsController#search as */*
+  Parameters: {"search_item_name"=>"Pie"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE (name LIKE '%Pie%')
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_items_list.html.haml (62.8ms)
+  Rendered items/search.js.haml (92.1ms)
+Completed 200 OK in 134ms (Views: 133.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/search?search_item_name=" for ::1 at 2015-02-09 10:26:52 -0500
+Processing by ItemsController#search as */*
+  Parameters: {"search_item_name"=>""}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE (name LIKE '%%')[0m
+  Rendered items/_item.html.haml (0.8ms)
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_items_list.html.haml (215.7ms)
+  Rendered items/search.js.haml (242.3ms)
+Completed 200 OK in 282ms (Views: 280.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/search?search_item_name=Cream" for ::1 at 2015-02-09 10:27:07 -0500
+Processing by ItemsController#search as */*
+  Parameters: {"search_item_name"=>"Cream"}
+  [1m[35mItem Load (0.5ms)[0m  SELECT "items".* FROM "items" WHERE (name LIKE '%Cream%')
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_items_list.html.haml (115.7ms)
+  Rendered items/search.js.haml (144.3ms)
+Completed 200 OK in 184ms (Views: 182.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/items" for ::1 at 2015-02-09 10:27:22 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>"Blueberry Cobbler"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "items" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Blueberry Cobbler"], ["created_at", "2015-02-09 15:27:22.389600"], ["updated_at", "2015-02-09 15:27:22.389600"]]
+  [1m[36m (9.2ms)[0m  [1mcommit transaction[0m
+  Rendered items/_item.html.haml (0.9ms)
+  Rendered items/create.js.haml (33.1ms)
+Completed 200 OK in 90ms (Views: 76.2ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/items/search?search_item_name=Cream" for ::1 at 2015-02-09 10:27:36 -0500
+Processing by ItemsController#search as */*
+  Parameters: {"search_item_name"=>"Cream"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items" WHERE (name LIKE '%Cream%')
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_items_list.html.haml (119.7ms)
+  Rendered items/search.js.haml (146.7ms)
+Completed 200 OK in 187ms (Views: 186.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/items/search?search_item_name=" for ::1 at 2015-02-09 10:27:40 -0500
+Processing by ItemsController#search as */*
+  Parameters: {"search_item_name"=>""}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items" WHERE (name LIKE '%%')[0m
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_items_list.html.haml (252.3ms)
+  Rendered items/search.js.haml (281.5ms)
+Completed 200 OK in 320ms (Views: 319.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?search_item_name=Cream" for ::1 at 2015-02-09 10:27:45 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>"Cream"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_items_list.html.haml (30.4ms)
+  Rendered items/_new_item.html.haml (0.4ms)
+  Rendered items/index.html.haml within layouts/application (37.2ms)
+Completed 200 OK in 231ms (Views: 229.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/items-242bbff4c120005b76abbbc3c174fa83.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/application-dbfc6ff43e933bb44ffae1b0c36849e4.js?body=1" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:27:46 -0500
+
+
+Started GET "/items/search?search_item_name=Cream" for ::1 at 2015-02-09 10:27:52 -0500
+Processing by ItemsController#search as */*
+  Parameters: {"search_item_name"=>"Cream"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items" WHERE (name LIKE '%Cream%')[0m
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_items_list.html.haml (109.7ms)
+  Rendered items/search.js.haml (137.5ms)
+Completed 200 OK in 175ms (Views: 174.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?search_item_name=Cream" for ::1 at 2015-02-09 10:27:57 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>"Cream"}
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.9ms)
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.8ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (1.0ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_items_list.html.haml (36.1ms)
+  Rendered items/_new_item.html.haml (0.9ms)
+  Rendered items/index.html.haml within layouts/application (43.5ms)
+Completed 200 OK in 165ms (Views: 163.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/items-242bbff4c120005b76abbbc3c174fa83.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/application-dbfc6ff43e933bb44ffae1b0c36849e4.js?body=1" for ::1 at 2015-02-09 10:27:58 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:27:58 -0500
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items"  ORDER BY "items"."id" DESC LIMIT 1[0m
+
+
+Started GET "/?search_item_name=Cream" for ::1 at 2015-02-09 10:35:19 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>"Cream"}
+  [1m[36mItem Load (0.9ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_item.html.haml (1.9ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_items_list.html.haml (34.9ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (41.9ms)
+Completed 200 OK in 263ms (Views: 258.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/items-d99e639a01af17d2223d2e75ea27cad1.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/application-6927d13c63a9fa2f48a263367ef56811.js?body=1" for ::1 at 2015-02-09 10:35:19 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:35:20 -0500
+
+
+Started GET "/?search_item_name=Cream" for ::1 at 2015-02-09 10:36:03 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>"Cream"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (1.3ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_items_list.html.haml (33.8ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (39.3ms)
+Completed 200 OK in 208ms (Views: 207.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/items-27406dda6a5135cf0fdc9597f80943f5.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/application-794508953b92d18de9c0ada132bcdd14.js?body=1" for ::1 at 2015-02-09 10:36:03 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:36:04 -0500
+
+
+Started GET "/items/1" for ::1 at 2015-02-09 10:36:08 -0500
+Processing by ItemsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 13ms
+
+ActionView::MissingTemplate (Missing template items/{"id":1,"name":"Ice Cream","created_at":"2015-02-09T14:42:27.444Z","updated_at":"2015-02-09T14:42:27.444Z"}, application/{"id":1,"name":"Ice Cream","created_at":"2015-02-09T14:42:27.444Z","updated_at":"2015-02-09T14:42:27.444Z"} with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :haml, :jbuilder]}. Searched in:
+  * "/Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates"
+  * "/Users/nbucciarelli/Desktop/ajax_demo/app/views"
+):
+  app/controllers/items_controller.rb:10:in `block (2 levels) in show'
+  app/controllers/items_controller.rb:9:in `show'
+
+
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/missing_template.text.erb (0.8ms)
+
+
+Started GET "/?search_item_name=Cream" for ::1 at 2015-02-09 10:36:34 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>"Cream"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_items_list.html.haml (31.2ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (36.2ms)
+Completed 200 OK in 216ms (Views: 215.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/items-5b1842f9e3f0209740d1ce7a509934e8.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/application-dbb41bce6245bfdc1e7c66fa461e68be.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:36:35 -0500
+
+
+Started GET "/items/1?_=1423496195662" for ::1 at 2015-02-09 10:36:36 -0500
+Processing by ItemsController#show as JS
+  Parameters: {"_"=>"1423496195662", "id"=>"1"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 10ms
+
+ActionView::MissingTemplate (Missing template items/{"id":1,"name":"Ice Cream","created_at":"2015-02-09T14:42:27.444Z","updated_at":"2015-02-09T14:42:27.444Z"}, application/{"id":1,"name":"Ice Cream","created_at":"2015-02-09T14:42:27.444Z","updated_at":"2015-02-09T14:42:27.444Z"} with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :haml, :jbuilder]}. Searched in:
+  * "/Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates"
+  * "/Users/nbucciarelli/Desktop/ajax_demo/app/views"
+):
+  app/controllers/items_controller.rb:10:in `block (2 levels) in show'
+  app/controllers/items_controller.rb:9:in `show'
+
+
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/missing_template.text.erb (0.4ms)
+
+
+Started GET "/?search_item_name=Cream" for ::1 at 2015-02-09 10:36:49 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>"Cream"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (0.8ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_items_list.html.haml (31.4ms)
+  Rendered items/_new_item.html.haml (0.1ms)
+  Rendered items/index.html.haml within layouts/application (36.4ms)
+Completed 200 OK in 212ms (Views: 211.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/items-fbc5e50f0beed992e3a4a3e9034fba71.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/application-135400fb5a35215abf31ee4f80f77cb8.js?body=1" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:36:50 -0500
+
+
+Started GET "/items/1" for ::1 at 2015-02-09 10:36:53 -0500
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 8ms
+
+ActionView::MissingTemplate (Missing template items/{"id":1,"name":"Ice Cream","created_at":"2015-02-09T14:42:27.444Z","updated_at":"2015-02-09T14:42:27.444Z"}, application/{"id":1,"name":"Ice Cream","created_at":"2015-02-09T14:42:27.444Z","updated_at":"2015-02-09T14:42:27.444Z"} with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :haml, :jbuilder]}. Searched in:
+  * "/Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates"
+  * "/Users/nbucciarelli/Desktop/ajax_demo/app/views"
+):
+  app/controllers/items_controller.rb:10:in `block (2 levels) in show'
+  app/controllers/items_controller.rb:9:in `show'
+
+
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/missing_template.text.erb (0.4ms)
+
+
+Started GET "/?search_item_name=Cream" for ::1 at 2015-02-09 10:37:08 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>"Cream"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_items_list.html.haml (32.6ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (38.3ms)
+Completed 200 OK in 217ms (Views: 216.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/items-414394b93bf8a9e2fd48dd7b9fdc995f.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/application-250c5580bf129370232b24780834a99e.js?body=1" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:37:09 -0500
+
+
+Started GET "/items/14" for ::1 at 2015-02-09 10:37:10 -0500
+Processing by ItemsController#show as */*
+  Parameters: {"id"=>"14"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 14]]
+Completed 500 Internal Server Error in 9ms
+
+ActionView::MissingTemplate (Missing template items/{"id":14,"name":"Blueberry Cobbler","created_at":"2015-02-09T15:27:22.389Z","updated_at":"2015-02-09T15:27:22.389Z"}, application/{"id":14,"name":"Blueberry Cobbler","created_at":"2015-02-09T15:27:22.389Z","updated_at":"2015-02-09T15:27:22.389Z"} with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :haml, :jbuilder]}. Searched in:
+  * "/Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates"
+  * "/Users/nbucciarelli/Desktop/ajax_demo/app/views"
+):
+  app/controllers/items_controller.rb:10:in `block (2 levels) in show'
+  app/controllers/items_controller.rb:9:in `show'
+
+
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/missing_template.text.erb (0.4ms)
+
+
+Started GET "/?search_item_name=Cream" for ::1 at 2015-02-09 10:37:59 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>"Cream"}
+  [1m[35mItem Load (0.6ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (2.4ms)
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_items_list.html.haml (38.1ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (45.4ms)
+Completed 200 OK in 223ms (Views: 221.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:37:59 -0500
+
+
+Started GET "/assets/items-8f563b57fbeb4e580343c12d48945089.js?body=1" for ::1 at 2015-02-09 10:37:59 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:37:59 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:37:59 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:37:59 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:37:59 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:37:59 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:37:59 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:37:59 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:37:59 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:37:59 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:37:59 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:37:59 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:37:59 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:37:59 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:38:00 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:38:00 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:38:00 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:38:00 -0500
+
+
+Started GET "/assets/application-d177916e64ac2b9ea50525edca6c762e.js?body=1" for ::1 at 2015-02-09 10:38:00 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:38:00 -0500
+
+
+Started GET "/items/1" for ::1 at 2015-02-09 10:38:02 -0500
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 500 Internal Server Error in 9ms
+
+ActionView::MissingTemplate (Missing template items/{"id":1,"name":"Ice Cream","created_at":"2015-02-09T14:42:27.444Z","updated_at":"2015-02-09T14:42:27.444Z"}, application/{"id":1,"name":"Ice Cream","created_at":"2015-02-09T14:42:27.444Z","updated_at":"2015-02-09T14:42:27.444Z"} with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :haml, :jbuilder]}. Searched in:
+  * "/Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates"
+  * "/Users/nbucciarelli/Desktop/ajax_demo/app/views"
+):
+  app/controllers/items_controller.rb:10:in `block (2 levels) in show'
+  app/controllers/items_controller.rb:9:in `show'
+
+
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/missing_template.text.erb (0.7ms)
+
+
+Started GET "/?search_item_name=Cream" for ::1 at 2015-02-09 10:38:55 -0500
+
+ActionController::RoutingError (The controller-level `respond_to' feature has been extracted to the `responders` gem. Add it to your Gemfile to continue using this feature:
+  gem 'responders', '~> 2.0'
+Consult the Rails upgrade guide for details.):
+  app/controllers/items_controller.rb:2:in `<class:ItemsController>'
+  app/controllers/items_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_route.html.erb (2.3ms)
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/routes/_table.html.erb (26.5ms)
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.5ms)
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/routing_error.html.erb within rescues/layout (158.1ms)
+
+
+Started GET "/?search_item_name=Cream" for ::1 at 2015-02-09 10:39:02 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>"Cream"}
+  [1m[35mItem Load (0.6ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (0.8ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_items_list.html.haml (40.3ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (46.7ms)
+Completed 200 OK in 163ms (Views: 149.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/application-d177916e64ac2b9ea50525edca6c762e.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/items-8f563b57fbeb4e580343c12d48945089.js?body=1" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:39:02 -0500
+
+
+Started GET "/items/1" for ::1 at 2015-02-09 10:39:04 -0500
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?search_item_name=Cream" for ::1 at 2015-02-09 10:39:59 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>"Cream"}
+  [1m[35mItem Load (0.9ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (9.0ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_items_list.html.haml (39.7ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (48.8ms)
+Completed 200 OK in 174ms (Views: 172.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/items-8f563b57fbeb4e580343c12d48945089.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/application-d177916e64ac2b9ea50525edca6c762e.js?body=1" for ::1 at 2015-02-09 10:39:59 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:40:00 -0500
+
+
+Started GET "/items/1" for ::1 at 2015-02-09 10:40:01 -0500
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items/14" for ::1 at 2015-02-09 10:40:08 -0500
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"14"}
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 14]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items/11" for ::1 at 2015-02-09 10:40:10 -0500
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"11"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 11]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/?search_item_name=Cream" for ::1 at 2015-02-09 10:41:02 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>"Cream"}
+  [1m[35mItem Load (0.8ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (1.1ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.8ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_items_list.html.haml (33.9ms)
+  Rendered items/_new_item.html.haml (0.4ms)
+  Rendered items/index.html.haml within layouts/application (41.7ms)
+Completed 200 OK in 247ms (Views: 245.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/items-29ad1b9e911769f0526c4ebe14bab526.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/application-ac93aae7baa685b21185437ce2bd810d.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:41:03 -0500
+
+
+Started GET "/items/14" for ::1 at 2015-02-09 10:41:04 -0500
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"14"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 14]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/12" for ::1 at 2015-02-09 10:41:06 -0500
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 12]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items/9" for ::1 at 2015-02-09 10:41:07 -0500
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 9]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items/1" for ::1 at 2015-02-09 10:41:09 -0500
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/2" for ::1 at 2015-02-09 10:41:10 -0500
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 2]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items/9" for ::1 at 2015-02-09 10:41:11 -0500
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"9"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 9]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/1" for ::1 at 2015-02-09 10:41:36 -0500
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/items/2" for ::1 at 2015-02-09 10:41:37 -0500
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 2]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items/3" for ::1 at 2015-02-09 10:41:37 -0500
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 3]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items/search?search_item_name=Ice+Cream+Sandwich" for ::1 at 2015-02-09 10:41:38 -0500
+Processing by ItemsController#search as */*
+  Parameters: {"search_item_name"=>"Ice Cream Sandwich"}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items" WHERE (name LIKE '%Ice Cream Sandwich%')
+  Rendered items/_item.html.haml (3.9ms)
+  Rendered items/_items_list.html.haml (36.6ms)
+  Rendered items/search.js.haml (68.2ms)
+Completed 200 OK in 108ms (Views: 106.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?search_item_name=" for ::1 at 2015-02-09 10:41:41 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>""}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.8ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_items_list.html.haml (31.2ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (37.8ms)
+Completed 200 OK in 129ms (Views: 128.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:41:42 -0500
+
+
+Started GET "/items/14" for ::1 at 2015-02-09 10:41:44 -0500
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"14"}
+  [1m[35mItem Load (0.1ms)[0m  SELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1  [["id", 14]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/items/12" for ::1 at 2015-02-09 10:41:45 -0500
+Processing by ItemsController#show as JSON
+  Parameters: {"id"=>"12"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 12]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/?search_item_name=" for ::1 at 2015-02-09 10:45:44 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>""}
+Completed 500 Internal Server Error in 3ms
+
+SyntaxError (/Users/nbucciarelli/Desktop/ajax_demo/app/models/item.rb:2: syntax error, unexpected ':', expecting keyword_end
+  :validates_presence_of :name
+                          ^):
+  app/models/item.rb:2: syntax error, unexpected ':', expecting keyword_end
+  app/controllers/items_controller.rb:4:in `index'
+
+
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (11.0ms)
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.2ms)
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (111.8ms)
+
+
+Started GET "/?search_item_name=" for ::1 at 2015-02-09 10:45:54 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>""}
+  [1m[35mItem Load (0.4ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_items_list.html.haml (29.6ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (36.9ms)
+Completed 200 OK in 266ms (Views: 262.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/items-3a2418d4ff1ef6a4af5eece319910022.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/application-af6b499976782c16ffc962ec17b78d40.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:45:55 -0500
+
+
+Started POST "/items" for ::1 at 2015-02-09 10:45:58 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>""}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/create.js.haml (31.0ms)
+Completed 200 OK in 94ms (Views: 72.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/items/undefined" for ::1 at 2015-02-09 10:46:01 -0500
+Processing by ItemsController#destroy as JS
+  Parameters: {"id"=>"undefined"}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Item with 'id'=undefined):
+  app/controllers/items_controller.rb:29:in `destroy'
+
+
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (2.5ms)
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.text.erb (0.8ms)
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.text.erb (57.5ms)
+
+
+Started GET "/?search_item_name=" for ::1 at 2015-02-09 10:46:04 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>""}
+  [1m[35mItem Load (0.3ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (1.1ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_items_list.html.haml (32.6ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (38.4ms)
+Completed 200 OK in 148ms (Views: 146.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/items-3a2418d4ff1ef6a4af5eece319910022.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/application-af6b499976782c16ffc962ec17b78d40.js?body=1" for ::1 at 2015-02-09 10:46:04 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:46:05 -0500
+
+
+Started POST "/items" for ::1 at 2015-02-09 10:46:11 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>""}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/create.js.haml (26.5ms)
+Completed 200 OK in 64ms (Views: 61.1ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/items/undefined" for ::1 at 2015-02-09 10:46:26 -0500
+Processing by ItemsController#destroy as JS
+  Parameters: {"id"=>"undefined"}
+  [1m[36mItem Load (0.1ms)[0m  [1mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT 1[0m  [["id", 0]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find Item with 'id'=undefined):
+  app/controllers/items_controller.rb:29:in `destroy'
+
+
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (2.6ms)
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.text.erb (1.2ms)
+  Rendered /Users/nbucciarelli/.rvm/gems/ruby-2.2.0@ajax_demo/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.text.erb (53.9ms)
+
+
+Started GET "/?search_item_name=" for ::1 at 2015-02-09 10:46:32 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>""}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.9ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_items_list.html.haml (30.9ms)
+  Rendered items/_new_item.html.haml (0.4ms)
+  Rendered items/index.html.haml within layouts/application (36.6ms)
+Completed 200 OK in 162ms (Views: 160.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/application-af6b499976782c16ffc962ec17b78d40.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/items-3a2418d4ff1ef6a4af5eece319910022.js?body=1" for ::1 at 2015-02-09 10:46:33 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:46:33 -0500
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+
+
+Started GET "/?search_item_name=" for ::1 at 2015-02-09 10:51:16 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>""}
+  [1m[36mItem Load (9.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_item.html.haml (0.9ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (1.0ms)
+  Rendered items/_item.html.haml (1.1ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (1.0ms)
+  Rendered items/_items_list.html.haml (47.2ms)
+  Rendered items/_new_item.html.haml (0.3ms)
+  Rendered items/index.html.haml within layouts/application (56.3ms)
+Completed 200 OK in 269ms (Views: 252.2ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:51:16 -0500
+
+
+Started GET "/assets/items-355717ccc0b0a1f07c0c2362bc3d3860.js?body=1" for ::1 at 2015-02-09 10:51:17 -0500
+
+
+Started GET "/assets/application-4cefe93e0ae5517df2c10d223f0d35bb.js?body=1" for ::1 at 2015-02-09 10:51:17 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:51:17 -0500
+
+
+Started POST "/items" for ::1 at 2015-02-09 10:51:20 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>""}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?search_item_name=" for ::1 at 2015-02-09 10:52:27 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>""}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.8ms)
+  Rendered items/_item.html.haml (0.8ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_items_list.html.haml (34.0ms)
+  Rendered items/_new_item.html.haml (0.6ms)
+  Rendered items/index.html.haml within layouts/application (41.1ms)
+Completed 200 OK in 213ms (Views: 212.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:52:27 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/items-b56a2f8e0d55b971780ae7df43fa75c0.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/application-d91f51020a3d037517d324db70249bb0.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:52:28 -0500
+
+
+Started POST "/items" for ::1 at 2015-02-09 10:52:29 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>""}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 4ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?search_item_name=" for ::1 at 2015-02-09 10:52:41 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>""}
+  [1m[36mItem Load (0.3ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.3ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_items_list.html.haml (30.2ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (35.2ms)
+Completed 200 OK in 215ms (Views: 213.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/items-3a50890f4c2fd0801be5733e941e5fcd.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/application-16bf35111c8c5f111e440f15ec9b243c.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:52:41 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:52:42 -0500
+
+
+Started GET "/?search_item_name=" for ::1 at 2015-02-09 10:52:51 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>""}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (0.9ms)
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_items_list.html.haml (32.2ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (37.7ms)
+Completed 200 OK in 221ms (Views: 219.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/items-d3787ab299328e4ebfc42219d62080ec.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/application-d2b544806bfed426781bdefeb5f78cf9.js?body=1" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:52:52 -0500
+
+
+Started POST "/items" for ::1 at 2015-02-09 10:52:53 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>""}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?search_item_name=" for ::1 at 2015-02-09 10:53:05 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>""}
+  [1m[36mItem Load (0.2ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_items_list.html.haml (35.2ms)
+  Rendered items/_new_item.html.haml (0.3ms)
+  Rendered items/index.html.haml within layouts/application (41.3ms)
+Completed 200 OK in 190ms (Views: 188.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/items-e7ff83ed613c7ed4008207697075615d.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/application-5a1f8a7b78fff79b4f2d0ec9e1f182b4.js?body=1" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:53:06 -0500
+
+
+Started POST "/items" for ::1 at 2015-02-09 10:53:07 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>""}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/?search_item_name=" for ::1 at 2015-02-09 10:53:15 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>""}
+  [1m[35mItem Load (0.2ms)[0m  SELECT "items".* FROM "items"
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.7ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_item.html.haml (0.8ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.9ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_items_list.html.haml (35.4ms)
+  Rendered items/_new_item.html.haml (0.2ms)
+  Rendered items/index.html.haml within layouts/application (40.6ms)
+Completed 200 OK in 256ms (Views: 255.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/items-2a3d98af5d5281f4d7797d32d550f437.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/application-a264cfa3c597428351e3d522f414de17.js?body=1" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:53:16 -0500
+
+
+Started POST "/items" for ::1 at 2015-02-09 10:53:17 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>""}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+Completed 422 Unprocessable Entity in 3ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/?search_item_name=" for ::1 at 2015-02-09 10:54:29 -0500
+Processing by ItemsController#index as HTML
+  Parameters: {"search_item_name"=>""}
+  [1m[36mItem Load (0.4ms)[0m  [1mSELECT "items".* FROM "items"[0m
+  Rendered items/_item.html.haml (0.6ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.4ms)
+  Rendered items/_item.html.haml (0.5ms)
+  Rendered items/_items_list.html.haml (29.1ms)
+  Rendered items/_new_item.html.haml (0.1ms)
+  Rendered items/index.html.haml within layouts/application (34.2ms)
+Completed 200 OK in 160ms (Views: 157.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/items-04fec660a61748e0d2eab44617aae5e5.css?body=1" for ::1 at 2015-02-09 10:54:29 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-02-09 10:54:29 -0500
+
+
+Started GET "/assets/application-4edc7476ad9a910fa6c3a211ea3270f8.css?body=1" for ::1 at 2015-02-09 10:54:29 -0500
+
+
+Started GET "/assets/bootstrap/alert-7c03e11fecf6b3ef100f76ae4f08586e.js?body=1" for ::1 at 2015-02-09 10:54:29 -0500
+
+
+Started GET "/assets/bootstrap/affix-31984abe1036c1c2f684af192191ce9f.js?body=1" for ::1 at 2015-02-09 10:54:29 -0500
+
+
+Started GET "/assets/bootstrap/carousel-93f34f850a932957c93b7605c79faf45.js?body=1" for ::1 at 2015-02-09 10:54:30 -0500
+
+
+Started GET "/assets/bootstrap/button-98bba85be4dcdd597554e0b7ce8e33a2.js?body=1" for ::1 at 2015-02-09 10:54:30 -0500
+
+
+Started GET "/assets/bootstrap/collapse-7a82a3d4fb154ded3d2702465e21ca00.js?body=1" for ::1 at 2015-02-09 10:54:30 -0500
+
+
+Started GET "/assets/bootstrap/dropdown-65c3929585250221f53bae696936ed44.js?body=1" for ::1 at 2015-02-09 10:54:30 -0500
+
+
+Started GET "/assets/bootstrap/tab-a90a1841af8c1eae12bfa5283a8093b0.js?body=1" for ::1 at 2015-02-09 10:54:30 -0500
+
+
+Started GET "/assets/bootstrap/transition-9e4de96204f41141474e9dbb59570af9.js?body=1" for ::1 at 2015-02-09 10:54:30 -0500
+
+
+Started GET "/assets/bootstrap/scrollspy-e550695030be1d627d1ba91b14792316.js?body=1" for ::1 at 2015-02-09 10:54:30 -0500
+
+
+Started GET "/assets/bootstrap/modal-ce380b9327d2cf6c826d8df818ea48a1.js?body=1" for ::1 at 2015-02-09 10:54:30 -0500
+
+
+Started GET "/assets/bootstrap/tooltip-4d90d4ee015d2df34a7696864b2ea83c.js?body=1" for ::1 at 2015-02-09 10:54:30 -0500
+
+
+Started GET "/assets/bootstrap/popover-5a060f876311e7fcb18f35058070de5a.js?body=1" for ::1 at 2015-02-09 10:54:30 -0500
+
+
+Started GET "/assets/bootstrap-sprockets-00b1738c651720f44abc4bbf70bedb3e.js?body=1" for ::1 at 2015-02-09 10:54:30 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-02-09 10:54:30 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for ::1 at 2015-02-09 10:54:30 -0500
+
+
+Started GET "/assets/items-2a3d98af5d5281f4d7797d32d550f437.js?body=1" for ::1 at 2015-02-09 10:54:30 -0500
+
+
+Started GET "/assets/application-a264cfa3c597428351e3d522f414de17.js?body=1" for ::1 at 2015-02-09 10:54:30 -0500
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular-3b21d33cc4addb2ebfe7f625dad8559b.woff2" for ::1 at 2015-02-09 10:54:30 -0500
+
+
+Started POST "/items" for ::1 at 2015-02-09 10:54:32 -0500
+Processing by ItemsController#create as */*
+  Parameters: {"item"=>{"name"=>""}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 422 Unprocessable Entity in 5ms (Views: 0.1ms | ActiveRecord: 0.2ms)

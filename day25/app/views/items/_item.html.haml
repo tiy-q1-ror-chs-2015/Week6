@@ -1,0 +1,6 @@
+%li{:id => "item_#{item.id}"}
+  = item.name
+  %span.glyphicon.glyphicon-remove.remove_item{"aria-hidden" => "true", "data-item_id" => item.id}
+  %span.glyphicon.glyphicon-pencil.edit_item{"aria-hidden" => "true", "data-item_id" => item.id }
+  %span.glyphicon.glyphicon-star-empty.show_item{"aria-hidden" => "true", "data-item_id" => item.id }
+  .clear

@@ -1,0 +1,2 @@
+$("#form_container").html("#{escape_javascript render 'new_item'}");
+$("#item_#{@item.id}").html("#{escape_javascript render 'item', item: @item}");

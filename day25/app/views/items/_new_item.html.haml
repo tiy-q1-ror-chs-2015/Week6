@@ -1,0 +1,5 @@
+%form#new_item_form
+  .form-inline
+    %label{:for => "item_name"} Name
+    = text_field_tag :item_name, '', name: 'item[name]', class: 'form-control'
+    %a#add_item_button.btn.btn-primary Add
